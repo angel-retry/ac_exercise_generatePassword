@@ -1,0 +1,38 @@
+.form-check-input {
+  width: 20px;
+  height: 20px;
+}
+
+p {
+  font-size: 1rem;
+}
+
+form>div {
+  padding: .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+
+}
+
+.btn {
+  padding: .5rem;
+  font-size: 1rem;
+}
+
+.container {
+  height: 100vh;
+}
+
+body {
+  background-color: #faffff;
+}
+
+.custom-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* 調整陰影效果 */
+}
+
+.card-title {
+  padding: .5rem;
+  font-weight: bold;
+}
