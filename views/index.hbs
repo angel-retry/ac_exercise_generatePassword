@@ -1,1 +1,113 @@
-<h1>Example App: Home</h1>
+<div class="card-body">
+  <form id="form" action="/generator_password" method="post" novalidate>
+    <div class="row g-3 ">
+      <div class="col-4">
+        <label for="passwordLength" class="col-form-label">Password Length</label>
+      </div>
+      <div class="col">
+        <input type="number" id="passwordLength" class="form-control" name="passwordLength" max="14" min="4"
+          value="{{data.passwordLength}}" required>
+        <span class="form-text">Length is available between 4 ~ 14</span>
+        <div class="invalid-feedback">
+          Please enter a number.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row g-3" class="form-check">
+
+      <div class="col-4">
+        <label class="form-check-label" for="LowercaseCharacters">
+          Include Lowercase Characters
+        </label>
+      </div>
+
+      <div class="col d-flex ">
+        <input class="form-check-input me-2" type="checkbox" value="on" id="LowercaseCharacters"
+          name="LowercaseCharacters" {{#if data.LowercaseCharacters}}checked {{/if}}>
+        <p>(e.g.abcde)</p>
+      </div>
+
+    </div>
+
+
+    <div class="row g-3" class="form-check">
+
+      <div class="col-4">
+        <label class="form-check-label" for="UppercaseCharacters">
+          Include Uppercase Characters
+        </label>
+      </div>
+
+      <div class="col d-flex ">
+        <input class="form-check-input me-2" type="checkbox" value="on" id="UppercaseCharacters"
+          name="UppercaseCharacters" {{#if data.UppercaseCharacters}}checked {{/if}}>
+        <p>(e.g.ABCDE)</p>
+      </div>
+
+    </div>
+
+    <div class="row g-3" class="form-check">
+
+      <div class="col-4">
+        <label class="form-check-label" for="numbers">
+          Include Numbers
+        </label>
+      </div>
+
+      <div class="col d-flex ">
+        <input class="form-check-input me-2" type="checkbox" value="on" id="numbers" name="numbers" {{#if
+          data.numbers}}checked {{/if}}>
+        <p>(e.g.123456)</p>
+      </div>
+
+    </div>
+
+    <div class="row g-3" class="form-check">
+
+      <div class="col-4">
+        <label class="form-check-label" for="symbols">
+          Include Symbols
+        </label>
+      </div>
+
+      <div class="col d-flex ">
+        <input class="form-check-input me-2" type="checkbox" value="on" id="symbols" name="symbols" {{#if
+          data.symbols}}checked {{/if}}>
+        <p>(e.g.@#$%)</p>
+      </div>
+
+    </div>
+
+    <div class="row g-3 ">
+      <div class="col-4">
+        <label for="excludeCharacters" class="col-form-label">Exclude Characters</label>
+      </div>
+      <div class="col">
+        <input type="text" id="excludeCharacters" class="form-control" name="excludeCharacters"
+          value="{{data.excludeCharacters}}">
+        <span class="form-text">These characters will not appear in th password</span>
+        <div class="valid-feedback">
+          it's okay that not to fill in any characters.
+        </div>
+      </div>
+    </div>
+
+    {{#if password}}
+    <div class="alert alert-primary" role="alert">
+      This is your code : <span class="fw-bold text-success"> {{ password }} </span>
+    </div>
+
+    {{/if}}
+
+    <div class=" d-flex justify-content-center">
+      <button class="btn btn-outline-primary col-4" id="submitButton" type="submit">Generator Password</button>
+    </div>
+
+
+
+
+  </form>
+
+</div>

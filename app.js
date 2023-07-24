@@ -1,6 +1,7 @@
 const express = require('express')
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser')
 const { engine } = require('express-handlebars')
+const randomPassword = require('./public/javascript/randomPassword')
 const app = express()
 const port = 3000
 
@@ -19,7 +20,8 @@ app.get('/', (req, res) => {
 
 app.post('/generator_password', (req, res) => {
   const data = req.body
-  res.send(data.passwordLength)
+  const password = randomPassword.getRandomPassword(data)
+  res.render('index', { password, data: data })
 })
 
 app.listen(port, () => {
