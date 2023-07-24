@@ -48,6 +48,6 @@ Example app listening on port 3000
 
 ## Development tool - 開發工具
 1. [Node.js](https://nodejs.org/en/)
-2. [Handlebars]([https://nodejs.org/en/](https://handlebarsjs.com/)https://handlebarsjs.com/)
+2. [Handlebars](https://handlebarsjs.com/)
 3. [express-handlebars](https://github.com/express-handlebars/express-handlebars)
 4. [Bootstrape v5.1.3](https://getbootstrap.com/)
